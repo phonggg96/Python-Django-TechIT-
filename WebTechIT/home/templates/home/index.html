@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Trang chủ {% endblock%}
+
+{% block slick_slider %}
+    <div class="slick_slider"> <!--  tin chính -->
+       {% for slide in tintucs %}
+           <div class="single_iteam">
+                <a href="home/{{ slide.slug }}"> <img src="{% static slide.Image %}" alt=""></a>
+                <div class="slider_article">
+                    <h2><a class="slider_tittle" href="home/{{ slide.slug }}">{{ slide.Title }}</a></h2>
+                    <p>{{ slide.Decriptions }}</p>
+                </div>
+            </div>
+       {% endfor %}
+    </div>
+{% endblock %}
+
+{% block tinnoibat %}
+<div class="latest_post">
+    <h2><span> Tin nổi bật </span></h2>
+
+        <div class="latest_post_container">
+        <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
+        <ul class="latest_postnav">
+           {% for tinnoibat in noibats %}
+                <li>
+                    <div class="media">
+                        <a href="home/{{ tinnoibat.slug }}" class="media-left"> <img alt="" src="{% static tinnoibat.Image %}"> </a>
+                        <div class="media-body"> <a href="home/{{ tinnoibat.slug }}" class="catg_title"> {{ tinnoibat.Title }}</a> </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        <div id="next-button"><i class="fa  fa-chevron-down"></i></div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block left_content %}
+    <div class="left_content">
+        <div class="single_post_content">
+            <h2><span>Mới nhất</span></h2>
+
+                <div class="single_post_content_left">
+                    <ul class="business_catgnav  wow fadeInDown">
+                        <li>
+                                <figure class="bsbig_fig">
+                                    <a href="home/{{ top_post.slug }}" class="featured_img"> <img alt="" src="{% static top_post.Image %}"> <span class="overlay"></span> </a>
+                                    <figcaption> <a href="home/{{ top_post.slug }}">{{ top_post.Title }}</a> </figcaption>
+                                    <p>{{ top_post.Decriptions  }}</p>
+                                </figure>
+                        </li>
+                    </ul>
+                </div>
+                <div class="single_post_content_right">
+                    <ul class="spost_nav">
+                           {% for tinmoi in posts %}
+                                <li>
+                                        <div class="media wow fadeInDown">
+                                            <a href="home/{{ tinmoi.slug }}" class="media-left"> <img alt="" src="{% static tinmoi.Image %}"> </a>
+                                            <div class="media-body"> <a href="home/{{ tinmoi.slug }}" class="catg_title">{{ tinmoi.Title }}</a> </div>
+                                        </div>
+                                </li>
+                          {% endfor %}
+                    </ul>
+                </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="fashion_technology_area">
+        <div class="fashion">
+            <div class="single_post_content">
+                <h2><span>Công nghệ</span></h2>
+                <ul class="business_catgnav wow fadeInDown">
+                   <li>
+                                <figure class="bsbig_fig">
+                                    <a href="home/{{ top_congnghe.slug }}" class="featured_img"> <img alt="" src="{% static top_congnghe.Image %}"> <span class="overlay"></span> </a>
+                                    <figcaption> <a href="home/{{ top_congnghe.slug }}">{{ top_congnghe.Title }}</a> </figcaption>
+                                    <p>{{ top_post.Decriptions  }}</p>
+                                </figure>
+                   </li>
+                </ul>
+                  <ul class="spost_nav">
+                    {% for laptrinh4tin in congnghes %}
+                    <li>
+                        <div class="media wow fadeInDown">
+                            <a href="home/{{ laptrinh4tin.slug  }}" class="media-left"> <img alt="" src="{% static laptrinh4tin.Image %}"> </a>
+                            <div class="media-body"> <a href="home/{{ laptrinh4tin.slug }}" class="catg_title">{{ laptrinh4tin.Title }}</a> </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="technology">
+            <div class="single_post_content">
+                <h2><span>Lập trình</span></h2>
+                <ul class="business_catgnav">
+                      <li>
+                                <figure class="bsbig_fig">
+                                    <a href="home/{{ top_post.slug }}" class="featured_img"> <img alt="" src="{% static top_post.Image %}"> <span class="overlay"></span> </a>
+                                    <figcaption> <a href="home/{{ top_post.slug }}">{{ top_post.Title }}</a> </figcaption>
+                                    <p>{{ top_post.Decriptions  }}</p>
+                                </figure>
+                      </li>
+                </ul>
+                <ul class="spost_nav">
+                    {% for laptrinh4tin in posts %}
+                    <li>
+                        <div class="media wow fadeInDown">
+                            <a href="home/{{ laptrinh4tin.slug  }}" class="media-left"> <img alt="" src="{% static laptrinh4tin.Image %}"> </a>
+                            <div class="media-body"> <a href="home/{{ laptrinh4tin.slug }}" class="catg_title">{{ laptrinh4tin.Title }}</a> </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="single_post_content">
+        <h2><span>Hình ảnh</span></h2>
+        <ul class="photograph_nav  wow fadeInDown">
+            {% for img in images %}
+                <li>
+                    <div class="photo_grid">
+                        <figure class="effect-layla">
+                            <a class="fancybox-buttons" data-fancybox-group="button" href="{% static img.Image %}" title="{{ img.Name }}"> <img src="{% static img.Image %}" alt="{{ img.url }}" /></a>
+                        </figure>
+                    </div>
+               </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+    <div class="single_post_content">
+        <h2><span>Games</span></h2>
+        <div class="single_post_content_left">
+            <ul class="business_catgnav">
+                 <li>
+                     <figure class="bsbig_fig">
+                         <a href="home/{{ top_post.slug }}" class="featured_img"> <img alt="" src="{% static top_post.Image %}"> <span class="overlay"></span> </a>
+                         <figcaption> <a href="home/{{ top_post.slug }}">{{ top_post.Title }}</a> </figcaption>
+                         <p>{{ top_post.Decriptions  }}</p>
+                     </figure>
+                 </li>
+            </ul>
+        </div>
+        <div class="single_post_content_right">
+            <ul class="spost_nav">
+                 {% for laptrinh4tin in posts %}
+                    <li>
+                        <div class="media wow fadeInDown">
+                            <a href="home/{{ laptrinh4tin.slug  }}" class="media-left"> <img alt="" src="{% static laptrinh4tin.Image %}"> </a>
+                            <div class="media-body"> <a href="home/{{ laptrinh4tin.slug }}" class="catg_title">{{ laptrinh4tin.Title }}</a> </div>
+                        </div>
+                    </li>
+                 {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+

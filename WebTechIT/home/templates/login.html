@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock %}
+{% block left_content %}
+   <div class="col-sm-6 col-sm-offset-3">
+     <h1>{{ title }}</h1>
+   <hr/>
+
+       <form method="POST" action="" enctype="multipart/form-data"> {% csrf_token %}
+           {{ form }}
+           <input type="submit" class="btn btn-theme" value='{{ title }}' />
+
+       </form>
+         <div class="panel-footer">
+             Don't have an account? <a href="{% url 'home:register' %}"><font color="#ff4500">Click here</font>  </a> to register.
+        </div>
+        <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+   </div>
+{% endblock %}

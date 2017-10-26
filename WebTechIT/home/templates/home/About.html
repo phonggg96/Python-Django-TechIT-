@@ -1,0 +1,33 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="shortcut icon" href="{% static "images/icon_page.png" %}" />
+
+    <title>About Me</title>
+</head>
+<body>
+
+    <div id="profile-wrap">
+      <div class="pulse1"></div>
+      <div class="pulse2"></div>
+      <div class="profile-overlay"></div>
+      <div class="profile-image"></div>
+      <div class="profile-name">
+        <h2>Hi, I'm Phong <br><span> a 22 years old Backend dev Python - Django. Feel free to follow me.</span></h2>
+      </div>
+      <div class="profile-social">
+        <ul>
+          <li><a href="{% url 'home:index' %}" data-toggle="tooltip"  target="_blank"><i class="fa fa-home"></i></a></li>
+          <li><a href="{% url 'home:index' %}" data-toggle="tooltip"  target="_blank"><i class="fa fa-codepen"></i></a></li>
+          <li><a href="{% url 'home:index' %}" data-toggle="tooltip"  target="_blank"><i class="fa fa-link"></i></a></li>
+        </ul>
+      </div>
+    </div>
+</body>
+</html>

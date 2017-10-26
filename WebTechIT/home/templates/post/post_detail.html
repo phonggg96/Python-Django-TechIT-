@@ -1,0 +1,51 @@
+{%extends 'base.html' %}
+
+{% load static %}
+{% block ads %}{% endblock ads %}
+{% block title %} {{ tintucs.Title }} {% endblock %}
+
+{% block left_content %}
+    <h1> <a href="home/{{ tintucs.slug }}"> {{ tintucs.title }}  </a> </h1>
+    <h6> {{ tintucs.Create_date }} Update {{ tintucs.Update_date | timesince}}ago</h6>
+    <img src="{% static tintucs.Image %}">
+        {{ tintucs.Content|safe|linebreaks }} <!-- xuống dòng -->
+
+    <!--comment form-->
+    <div class="fb-like" data-href="http://127.0.0.1:8000/" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
+
+    <hr/>
+    <!--  <h4>CÁC BÌNH LUẬN</h4>
+    <hr/>
+     <br>
+     <br>
+     <br>
+    <ul>
+        { % for comment in comments %}
+             <li>{ { comment.content }} - Bởi: { { comment.user.username }}</li>
+        { % endfor %}
+    </ul>
+
+    <hr />
+       <h4>Thêm bình luận</h4>
+        <form method="post" action="">
+            % csrf_token %
+             { comment_form.as_p }2
+            <br />
+            <input type="submit" class="btn btn-success" value="Bình luận" />
+            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div>
+
+        </form>
+
+-->
+      <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <div class="rating">
+         <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+    </div>
+    <hr />
+
+    <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="1"></div>
+
+
+{% endblock %}
+    
+

@@ -1,0 +1,287 @@
+html {
+    background:
+    radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+    background-color: #282828;
+    background-size: 16px 16px;
+    font-family: 'Raleway', sans-serif;
+    overflow-y: scroll;
+}
+#profile-wrap {
+    position: absolute;
+    margin: 0 auto;
+    top: 0; bottom: 0; left: 0; right: 0;
+    text-align: center;
+    height: 460px;
+    width: 450px;
+    z-index: 5;
+}
+.profile-overlay {
+    position: absolute;
+    margin: 0 auto;
+    margin-top: 10px;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: 2;
+    border-radius: 50%;
+    display: block;
+    width: 280px;
+    height: 280px;
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+       -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+            box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.4);
+}
+.profile-image {
+    position: absolute;
+    margin: 0 auto;
+    margin-top: 10px;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: 0;
+    display: block;
+    height: 280px;
+    width: 280px;
+    border-radius: 50%;
+    background: url(images/child.jpg) 0 -30px;
+    background-size: 100%;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 0px 15px rgba(0, 0, 0, .2);
+       -moz-box-shadow: 0 0 0px 15px rgba(0, 0, 0, .2);
+            box-shadow: 0 0 0px 15px rgba(0, 0, 0, .2);
+    transition: all ease 0.3s;
+}
+#profile-wrap:hover .profile-image {
+    background-position: 0 -29px;
+    border-radius: 0;
+    margin-top: -15px;
+    height: 420px;
+    width: 320px;
+    z-index: 1;
+    -webkit-box-shadow: 0 0 0px 15px rgba(0, 0, 0,.2),
+        inset 0px -100px 100px -90px rgba(0, 0, 0, 1);
+       -moz-box-shadow: 0 0 0px 15px rgba(0, 0, 0,.2),
+        inset 0px -100px 100px -90px rgba(0, 0, 0, 1);
+            box-shadow: 0 0 0px 15px rgba(0, 0, 0,.2),
+        inset 0px -100px 100px -90px rgba(0, 0, 0, 1);
+}
+#profile-wrap:hover .profile-name h2 {
+    font-size: 36px;
+    margin-top: 280px;
+}
+
+#profile-wrap:hover .profile-name h2 span {
+    opacity: 0;
+}
+#profile-wrap:hover .profile-social {
+    opacity: 1;
+    margin-top: -35px;
+}
+#profile-wrap:hover .pulse1{
+    border: 2px solid rgba(255, 255, 255, 0);
+    box-shadow: inset 0px 0px 15px 10px rgba(0, 0, 0, 0);
+}
+#profile-wrap:hover .pulse2{
+    border: 10px solid rgba(0, 0, 0, 0);
+    box-shadow: inset 0px 0px 12px 5px rgba(255, 255, 255, 0);
+}
+
+.profile-name h2 {
+    position: relative;
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 46px;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+    margin: 0;
+    margin-top: 295px;
+    z-index: 5;
+    transition: all ease 0.3s;
+}
+.profile-name h2 span {
+    color: #ccc;
+    font-size: 18px;
+    display: block;
+    font-weight: 400;
+    margin: 5px;
+    transition: all ease 0.3s;
+}
+.profile-social {
+    position: relative;
+    opacity: 0;
+    transition: all ease 0.3s;
+    padding: 0 0 20px 0;
+    z-index: 5;
+}
+.profile-social ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.profile-social ul li {
+    display: inline-block;
+    margin: 0;
+}
+.profile-social ul li a {
+    width: 40px;
+    height: 40px;
+    display: block;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    background: #303030;
+    color: white;
+}
+.profile-social ul li a:hover {
+    background: #e53f51;
+}
+
+.pulse1 {
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    margin: auto;
+    top: -158px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    opacity: 0;
+    border: 2px solid rgba(255, 255, 255, .1);
+    -webkit-animation: pulsejg1 4s linear infinite;
+            animation: pulsejg1 4s linear infinite;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+    box-shadow: inset 0px 0px 15px 10px rgba(0, 0, 0, .6);
+    box-sizing: border-box;
+    transition: all ease 0.8s;
+}
+.pulse2 {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    margin: auto;
+    top: -158px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    opacity: 0;
+    border: 10px solid rgba(0, 0, 0, .4);
+    -webkit-animation: pulsejg2 4s linear infinite;
+            animation: pulsejg2 4s linear infinite;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+    box-shadow: inset 0px 0px 12px 5px rgba(255, 255, 255, .8);
+    box-sizing: border-box;
+    transition: all ease 0.8s;
+}
+@-webkit-keyframes pulsejg1 {
+    0% {
+        -webkit-transform: scale(.6);
+        opacity: 0
+    }
+    50% {
+        -webkit-transform: scale(.6);
+        opacity: 0
+    }
+    60% {
+        -webkit-transform: scale(.9);
+        opacity: .1
+    }
+    70% {
+        -webkit-transform: scale(1.1);
+        opacity: .25
+    }
+    80% {
+        -webkit-transform: scale(1.25);
+        opacity: .1
+    }
+    100% {
+        -webkit-transform: scale(1.4);
+        opacity: 0
+    }
+}
+@keyframes pulsejg1 {
+    0% {
+        transform: scale(.6);
+        opacity: 0
+    }
+    50% {
+        transform: scale(.6);
+        opacity: 0
+    }
+    60% {
+        transform: scale(.9);
+        opacity: .1
+    }
+    70% {
+        transform: scale(1.1);
+        opacity: .25
+    }
+    80% {
+        transform: scale(1.25);
+        opacity: .1
+    }
+    100% {
+        transform: scale(1.4);
+        opacity: 0
+    }
+}
+@-webkit-keyframes pulsejg2 {
+    0% {
+        -webkit-transform: scale(.6);
+        opacity: 0
+    }
+    40% {
+        -webkit-transform: scale(.8);
+        opacity: .05
+    }
+    50% {
+        -webkit-transform: scale(1);
+        opacity: .1
+    }
+    60% {
+        -webkit-transform: scale(1.1);
+        opacity: .3
+    }
+    80% {
+        -webkit-transform: scale(1.2);
+        opacity: .1
+    }
+    100% {
+        -webkit-transform: scale(1.3);
+        opacity: 0
+    }
+}
+@keyframes pulsejg2 {
+    0% {
+        transform: scale(.6);
+        opacity: 0
+    }
+    40% {
+        transform: scale(.8);
+        opacity: .05
+    }
+    50% {
+        transform: scale(1);
+        opacity: .1
+    }
+    60% {
+        transform: scale(1.1);
+        opacity: .3
+    }
+    80% {
+        transform: scale(1.2);
+        opacity: .1
+    }
+    100% {
+        transform: scale(1.3);
+        opacity: 0
+    }
+}
